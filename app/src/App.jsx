@@ -1,35 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react'
+import NavComponent from './components/NavComponent'
+import HeroComponent from './components/HeroComponent'
 
-function App() {
-  const [count, setCount] = useState(0)
+export const BASE_URL = "http://localhost:9000";
+
+
+export default function App() {
+
+  const [data, setData] = useState(null);
+  const [filterdData, setFilteredData] = useState(null);
+
+  const [loading , setLoading] = useState(false);
+  const [error , setError] = useState(null);
+
+  const [selectedBtn, setSelectedBtn] = useState("all");
+
+  useEffect(() => {
+    const fetchFoodData = async () =>{
+      setLoading(true);
+      try {
+        const response = await fetch(BASE_URL);
+  
+      const json = await response.json();
+      
+      setData(json);
+      setFilteredData(json);
+      setLoading(false);
+  
+      } catch (error) {
+          setErr("Server Not Responding Try After Some Time....!")
+      }
+    }
+
+    fetchFoodData();
+  }, []);
+
+
+  const filterFood = (type)=>{
+    if(type == "all"){
+      setFilteredData(data);
+      setSelectedBtn("all");
+      return;
+    }
+
+    const filter = data?.filter((food) => 
+    food.type.toLowerCase().includes(type.toLowerCase()));
+
+    setFilteredData(filter);
+    setSelectedBtn(type);
+  }
+
+
+  const searchFood = (e)=>{
+    const searchValue = e.target.value;
+
+    console.log(searchValue);
+
+    if(searchValue == " ") {
+      setFilteredData(null);
+    }
+
+    const filter = data?.filter((food) => 
+        food.name.toLowerCase().includes(searchValue.toLowerCase()));
+
+      setFilteredData(filter);  
+
+  };
+  
+
+  if(error) return <div>{error}</div>
+  if(loading) return <div>Loading....</div>
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className=' w-[100%]  box-border p-0 m-0 bg-[#323334]'>
+      <NavComponent searchFood={searchFood} filterFood={filterFood} />
+      <HeroComponent data={filterdData}/>
+    </div>
   )
 }
-
-export default App
