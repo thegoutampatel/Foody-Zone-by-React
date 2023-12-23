@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react'
 import NavComponent from './components/NavComponent'
 import HeroComponent from './components/HeroComponent'
 
-export const BASE_URL = "http://localhost:9000";
+export const BASE_URL = "https://mocki.io/v1/ff42c185-4eb5-475e-859c-f6c7b969a79f";
 
 
 export default function App() {
 
   const [data, setData] = useState(null);
   const [filterdData, setFilteredData] = useState(null);
-
   const [loading , setLoading] = useState(false);
   const [error , setError] = useState(null);
 

@@ -10,7 +10,7 @@ function HeroComponent({data}) {
                 {
                     data?.map((food)=> <div key={food.name}> 
                     <div className=" flex text-white w-[340px] h-[167px] border-2 border-red-500 rounded-lg backdrop-blur-md items-center">
-                        <img src={BASE_URL + food.image} alt="foodimg" className=" rounded-full  w-[133px] h-[133px]"/>
+                        <img src={food.image} alt="foodimg" className=" rounded-full  w-[133px] h-[133px]"/>
                         <div className="flex flex-col ">
                         <h1 className="text-[16px] font-semibold">{food.name}</h1>
                         <h2 className="text-[12px] w-[168px] h-[59px]">{food.text}</h2>
