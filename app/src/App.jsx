@@ -22,13 +22,12 @@ export default function App() {
         const response = await fetch(BASE_URL);
   
       const json = await response.json();
-      
       setData(json);
       setFilteredData(json);
       setLoading(false);
   
-      } catch (error) {
-          setErr("Server Not Responding Try After Some Time....!")
+      } catch (e) {
+          setError("Server Not Responding Try After Some Time....!")
       }
     }
 
@@ -68,7 +67,7 @@ export default function App() {
   };
   
 
-  if(error) return <div>{error}</div>
+  if(error) return <div className='flex items-center justify-center h-[100vh] text-red-600'>{error}</div>
   if(loading) return <div className='flex flex-col items-center justify-center h-[100vh]'><img src={loaderimg} alt="" /> <p>Loading...</p></div>
 
 
