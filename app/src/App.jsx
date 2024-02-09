@@ -68,7 +68,7 @@ export default function App() {
   
 
   if(error) return <div>{error}</div>
-  if(loading) return <div>Loading....</div>
+  if(loading) return <div><img src="./assets/loading.gif" alt="" /></div>
 
 
   return (
