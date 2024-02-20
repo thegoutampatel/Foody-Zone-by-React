@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NavComponent from './components/NavComponent'
 import HeroComponent from './components/HeroComponent'
-import loaderimg from './assets/loading.gif' 
+import loadingImg from './assets/loading.gif' 
 
 export const BASE_URL = "https://mocki.io/v1/ff42c185-4eb5-475e-859c-f6c7b969a79f";
 
@@ -68,8 +68,7 @@ export default function App() {
   
 
   if(error) return <div className='flex items-center justify-center h-[100vh] text-red-600'>{error}</div>
-  if(loading) return <div className='flex flex-col items-center justify-center h-[100vh]'><img src={loaderimg} alt="" /> <p>Loading...</p></div>
-
+  if(loading) return <div className='flex flex-col items-center justify-center h-[100vh]'><img src={loadingImg} alt="" /> <p>Loading...</p></div>
 
   return (
     <div className=' w-[100%]  box-border p-0 m-0 bg-[#323334]'>
