@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Boiled Egg",
+        "price": 10,
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        "image": "https://imgbb.host/images/34E4H.png",
+        "type": "breakfast"
+    },
+    {
+        "name": "RAMEN",
+        "price": 25,
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        "image": "https://imgbb.host/images/34C6V.png",
+        "type": "lunch"
+    },
+    {
+        "name": "GRILLED CHICKEN",
+        "price": 45,
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        "image": "https://imgbb.host/images/34xgI.png",
+        "type": "dinner"
+    },
+    {
+        "name": "CAKE",
+        "price": 18,
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        "image": "https://imgbb.host/images/34IUM.png",
+        "type": "breakfast"
+    },
+    {
+        "name": "BURGER",
+        "price": 23,
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        "image": "https://imgbb.host/images/344e1.png",
+        "type": "lunch"
+    },
+    {
+        "name": "PANCAKE",
+        "price": 25,
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        "image": "https://imgbb.host/images/34ywi.png",
+        "type": "dinner"
+    }
+]

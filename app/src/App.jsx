@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import NavComponent from './components/NavComponent'
 import HeroComponent from './components/HeroComponent'
 import loadingImg from './assets/loading.gif' 
+import menu from './menu.json'
 
-export const BASE_URL = "https://mocki.io/v1/ff42c185-4eb5-475e-859c-f6c7b969a79f";
+export const BASE_URL = menu ;
 
 
 export default function App() {
@@ -19,11 +20,11 @@ export default function App() {
     const fetchFoodData = async () =>{
       setLoading(true);
       try {
-        const response = await fetch(BASE_URL);
+      //   const response = await fetch(BASE_URL);
   
-      const json = await response.json();
-      setData(json);
-      setFilteredData(json);
+      // const json = await response.json();
+      setData(menu);
+      setFilteredData(menu);
       setLoading(false);
   
       } catch (e) {
